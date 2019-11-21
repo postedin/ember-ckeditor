@@ -1,13 +1,33 @@
 {
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "name": "@postedin/ember-ckeditor",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.1.0",
+  "description": "Unofficial Ember.js component for CKEditor 5 – the best browser-based rich text editor.",
   "keywords": [
-    "ember-addon"
+    "wysiwyg",
+    "rich text",
+    "editor",
+    "html",
+    "contentEditable",
+    "editing",
+    "ember",
+    "ember.js",
+    "ember component",
+    "ember.js component",
+    "ckeditor",
+    "ckeditor5",
+    "ckeditor 5"
   ],
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/postedin/ember-ckeditor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/postedin/ember-ckeditor/issues"
+  },
+  "homepage": "https://github.com/postedin/ember-ckeditor",
   "license": "MIT",
-  "author": "",
+  "author": "Postedin SpA (https://postedin.com)",
   "directories": {
     "doc": "doc",
     "test": "tests"
