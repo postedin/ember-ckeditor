@@ -8,15 +8,14 @@ class SimpleUploadAdapter extends BaseUploadAdapter {
 
     this.editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
       let adapter = createUploadAdapter(loader, this.editor.config.get('simpleUpload'));
-      let initListeners = adapter._initListeners;
 
       adapter._initListeners = function (resolve, reject, file) {
-        initListeners.call(adapter, resolve, reject, file);
-
         const xhr = adapter.xhr;
+        const loader = this.loader;
         const genericErrorText = `Couldn't upload file: ${ file.name }.`;
 
-        xhr._eventListeners.load.pop();
+        xhr.addEventListener('error', () => reject(genericErrorText));
+        xhr.addEventListener('abort', () => reject());
 
         xhr.addEventListener('load', () => {
           let response = xhr.response;
@@ -43,6 +42,15 @@ class SimpleUploadAdapter extends BaseUploadAdapter {
 
           return resolve(response);
         });
+
+        if (xhr.upload) {
+          xhr.upload.addEventListener('progress', (event) => {
+            if (event.lengthComputable) {
+              loader.uploadTotal = event.total;
+              loader.uploaded = event.loaded;
+            }
+          });
+        }
       };
 
       return adapter;
