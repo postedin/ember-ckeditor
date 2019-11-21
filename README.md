@@ -7,6 +7,20 @@ CKEditor 5 component for Ember.js
 
 This integration is a work in progress and currently will only see features we directly need.
 
+## Gitub Packages
+
+**NOTE**: we don't publish on the NPM registry. We use github, https://github.com/postedin/ember-ckeditor/packages/61078. So you need to do the following to install:
+
+*append (or create) to .npmrc:*
+```
+@postedin:registry=https://npm.pkg.github.com
+```
+
+*then run install like normal:*
+```
+ember install @postedin/ember-ckeditor
+```
+
 ## Why we made it
 
 [Postedin](https://postedin.com) is a content creation platform. A good rich text editor is at the core of our product. Our platform uses [Ember.js](https://emberjs.com) so we naturally need a good integration with CKEditor 5 which we consider to be the best editor for the browser by a long shot. 
