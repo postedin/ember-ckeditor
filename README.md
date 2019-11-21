@@ -23,7 +23,7 @@ ember install @postedin/ember-ckeditor
 
 ## Why we made it
 
-[Postedin](https://postedin.com) is a content creation platform. A good rich text editor is at the core of our product. Our platform uses [Ember.js](https://emberjs.com) so we naturally need a good integration with CKEditor 5 which we consider to be the best editor for the browser by a long shot. 
+[Postedin](https://www.postedin.com) is a content creation platform. A good rich text editor is at the core of our product. Our platform uses [Ember.js](https://emberjs.com) so we naturally need a good integration with CKEditor 5 which we consider to be the best editor for the browser by a long shot. 
 
 ## What is next
 
