@@ -1,19 +1,22 @@
 <h2 id="title">Welcome to Ember</h2>
 
-CKEditor: <CKEditor />
-
 <div class="tailwind p-12 flex flex-col">
   <div class="mb-5">
     <h3 class="font-semibold">Rework: Default</h3>
     <div class="flex spaced">
       <div class="w-1/2">
-        <CKEditor @value={{default}} @onInput={{action (mut default)}} />
+        <CKEditor @value={{default}} @onInput={{action (mut default)}} @onUpload={{action 'uploaded'}} @options={{this.options}} />
       </div>
       <div class="w-1/2">
         <div class="mb-3 ui-box ui-box-padded">
           <div class="content-scope">{{{default}}}</div>
         </div>
-        <div class="revision-content-html">{{{default}}}</div>
+        {{#if this.uploads.length}}
+          Uploads:
+          {{#each this.uploads as |upload|}}
+            <div>{{upload.default}}</div>
+          {{/each}}
+        {{/if}}
       </div>
     </div>
   </div>

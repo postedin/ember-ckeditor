@@ -9,6 +9,7 @@ module.exports = {
 
   options: {
     autoImport: {
+      // forbidEval: true,
       webpack: {
         plugins: [
           new CKEditorWebpackPlugin({ language: 'en' }),

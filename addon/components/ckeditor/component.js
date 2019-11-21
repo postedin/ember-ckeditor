@@ -44,7 +44,14 @@ class CKEditorComponent extends Component {
   }
 
   async createEditor(element) {
-    let editor = await this.editorClass.create(element, this.args.options);
+    let editor;
+
+    try {
+      editor = await this.editorClass.create(element, this.args.options);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+    }
 
     this.initialize(editor);
   }
@@ -63,6 +70,7 @@ class CKEditorComponent extends Component {
 
     this.listenToChanges(editor);
     this.listenToFocus(editor);
+    this.listenToUpload(editor);
 
     if (this.args.onReady) {
       this.args.onReady(editor);
@@ -102,6 +110,20 @@ class CKEditorComponent extends Component {
     });
   }
 
+  listenToUpload(editor) {
+    let fileRepository = editor.plugins.get('FileRepository');
+
+    if (fileRepository) {
+      fileRepository.on('loaderCreated', (event, loader) => {
+        loader.on('change:uploadResponse', () => {
+          if (loader.uploadResponse) {
+            this.editorUpload(loader.uploadResponse);
+          }
+        });
+      });
+    }
+  }
+
   editorInput(value) {
     if (this.dead) {
       return;
@@ -129,6 +151,16 @@ class CKEditorComponent extends Component {
 
     if (this.args.onBlur) {
       this.args.onBlur();
+    }
+  }
+
+  editorUpload(response) {
+    if (this.dead) {
+      return;
+    }
+
+    if (this.args.onUpload) {
+      this.args.onUpload(response);
     }
   }
 }
