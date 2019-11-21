@@ -1,4 +1,4 @@
-CKEditor 5 rich text editor component for Vue.js
+CKEditor 5 component for Ember.js
 ==============================================================================
 
 **Un**official [CKEditor 5](https://ckeditor.com/ckeditor-5/) rich text editor component for Ember.js.
