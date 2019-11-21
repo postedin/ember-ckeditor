@@ -1,7 +1,7 @@
 {
   "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "name": "@postedin/ember-ckeditor",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Unofficial Ember.js component for CKEditor 5 – the best browser-based rich text editor.",
   "keywords": [
     "ember-addon",
