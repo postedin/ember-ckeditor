@@ -4,6 +4,7 @@
   "version": "0.1.2",
   "description": "Unofficial Ember.js component for CKEditor 5 – the best browser-based rich text editor.",
   "keywords": [
+    "ember-addon",
     "wysiwyg",
     "rich text",
     "editor",
