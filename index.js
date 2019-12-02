@@ -2,6 +2,7 @@
 'use strict';
 
 const CKEditorWebpackPlugin = require('@ckeditor/ckeditor5-dev-webpack-plugin');
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const { styles } = require('@ckeditor/ckeditor5-dev-utils');
 
 module.exports = {
@@ -9,10 +10,12 @@ module.exports = {
 
   options: {
     autoImport: {
-      // forbidEval: true,
       webpack: {
         plugins: [
           new CKEditorWebpackPlugin({ language: 'en' }),
+          new MiniCssExtractPlugin({
+            filename: 'ckeditor-lark.css'
+          }),
         ],
         module: {
           rules: [
@@ -23,12 +26,8 @@ module.exports = {
             {
               test: /ckeditor5-[^/\\]+[/\\]theme[/\\].+\.css$/,
               use: [
-                {
-                  loader: 'style-loader',
-                  options: {
-                    injectType: 'singletonStyleTag',
-                  },
-                },
+                MiniCssExtractPlugin.loader,
+                'css-loader',
                 {
                   loader: 'postcss-loader',
                   options: styles.getPostCssConfig({
