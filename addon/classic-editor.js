@@ -56,8 +56,11 @@ ClassicEditor.defaultConfig = {
   },
   image: {
     toolbar: [
-      'imageStyle:full', 'imageStyle:side', '|',
+      'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight', '|',
       'imageTextAlternative',
+    ],
+    styles: [
+      'full', 'alignLeft', 'alignRight',
     ],
   },
   table: {

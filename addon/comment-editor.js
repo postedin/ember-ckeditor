@@ -22,6 +22,7 @@ CommentEditor.defaultConfig = {
     'Bold',
     'Italic',
     'Link',
+    'BlockQuote',
     Code,
   ],
   toolbar: false,
