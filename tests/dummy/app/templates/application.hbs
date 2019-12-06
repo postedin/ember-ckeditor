@@ -3,9 +3,14 @@
 <div class="tailwind p-12 flex flex-col">
   <div class="mb-5">
     <h3 class="font-semibold">Rework: Default</h3>
+    <div>
+      <label>
+        Disabled: <input type="checkbox" onclick={{action (mut disabled) value='target.checked'}} />
+      </label>
+    </div>
     <div class="flex spaced">
       <div class="w-1/2">
-        <CKEditor @value={{default}} @onInput={{action (mut default)}} @onUpload={{action 'uploaded'}} @options={{this.options}} />
+        <CKEditor @value={{default}} @disabled={{disabled}} @onInput={{action (mut default)}} @onUpload={{action 'uploaded'}} @options={{this.options}} />
       </div>
       <div class="w-1/2">
         <div class="mb-3 ui-box ui-box-padded">

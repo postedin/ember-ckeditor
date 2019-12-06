@@ -1,6 +1,7 @@
 <div ...attributes>
   <div
     {{did-insert (fn this.handleInsertElement)}}
+    {{did-update this.handleDisable @disabled}}
     {{will-destroy (fn this.handleDestroyElement)}}
   ></div>
 </div>

@@ -37,6 +37,13 @@ class CKEditorComponent extends Component {
   }
 
   @action
+  handleDisable(element, [ disabled ]) {
+    if (this.editor) {
+      this.editor.isReadOnly = disabled;
+    }
+  }
+
+  @action
   handleDestroyElement() {
     if (this.editor) {
       this.editor.destroy();
@@ -63,6 +70,10 @@ class CKEditorComponent extends Component {
 
     if (this.args.value) {
       editor.setData(this.args.value);
+    }
+
+    if (this.args.disabled) {
+      editor.isReadOnly = true;
     }
 
     // right away we send the new value back because ckeditor will strip stuff not supported
