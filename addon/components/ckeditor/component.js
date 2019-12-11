@@ -77,7 +77,9 @@ class CKEditorComponent extends Component {
     }
 
     // right away we send the new value back because ckeditor will strip stuff not supported
-    this.editorInput(editor.getData());
+    if (this.args.value !== editor.getData()) {
+      this.editorInput(editor.getData());
+    }
 
     this.listenToChanges(editor);
     this.listenToFocus(editor);
