@@ -6,6 +6,7 @@ import InlineEditor from '@postedin/ember-ckeditor/inline-editor';
 import ClassicEditor from '@postedin/ember-ckeditor/classic-editor';
 import SimpleEditor from '@postedin/ember-ckeditor/simple-editor';
 import CommentEditor from '@postedin/ember-ckeditor/comment-editor';
+import DocumentEditor from '@postedin/ember-ckeditor/document-editor';
 
 const DEBOUNCE_MS = 100;
 
@@ -22,6 +23,7 @@ class CKEditorComponent extends Component {
       case 'inline': return InlineEditor;
       case 'simple': return SimpleEditor;
       case 'comment': return CommentEditor;
+      case 'document': return DocumentEditor;
     }
 
     return ClassicEditor;
@@ -50,11 +52,20 @@ class CKEditorComponent extends Component {
     }
   }
 
+  @action
+  handleInsertedToolbar(element) {
+    this.toolbarElement = element;
+  }
+
   async createEditor(element) {
     let editor;
 
     try {
       editor = await this.editorClass.create(element, this.args.options);
+
+      if (this.args.editor === 'document') {
+        this.toolbarElement.appendChild(editor.ui.view.toolbar.element);
+      }
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error);

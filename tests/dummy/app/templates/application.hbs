@@ -25,4 +25,22 @@
       </div>
     </div>
   </div>
+  <div class="mb-5">
+    <h3 class="font-semibold">Document: Default</h3>
+    <div>
+      <label>
+        Disabled: <input type="checkbox" onclick={{action (mut documentDisabled) value='target.checked'}} />
+      </label>
+    </div>
+    <div class="flex spaced">
+      <div class="w-1/2">
+        <CKEditor @editor="document" @value={{document}} @disabled={{documentDisabled}} @onInput={{action (mut document)}} @options={{this.documentOptions}} />
+      </div>
+      <div class="w-1/2">
+        <div class="mb-3 ui-box ui-box-padded">
+          <div class="content-scope">{{{document}}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
