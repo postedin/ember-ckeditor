@@ -7,6 +7,10 @@
   --ckeditor-document-editable-max-height: 700px;
   --ckeditor-document-editable-content-color: #fff;
   --ckeditor-document-editable-content-min-height: 29.7cm;
+  --ckeditor-document-editable-content-border: 1px #d3d3d3 solid;
+  --ckeditor-document-editable-content-box-shadow: 0 0 5px rgba(0,0,0,.1);
+  --ckeditor-document-editable-content-width: width: 21cm;
+  --ckeditor-document-editable-content-padding: padding: 2cm;
 }
 
 .ckeditor-document {
@@ -23,7 +27,14 @@
   overflow-y: auto;
 }
 
+
 .ckeditor-document-editable .ck-content {
+  border: var(--ckeditor-document-editable-content-border);
+  box-shadow: var(--ckeditor-document-editable-content-box-shadow);
   background-color: var(--ckeditor-document-editable-content-color);
   min-height: var(--ckeditor-document-editable-content-min-height);
+  width: var(--ckeditor-document-editable-content-width);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: var(--ckeditor-document-editable-content-padding);
 }
