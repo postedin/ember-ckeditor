@@ -11,7 +11,10 @@ const DEBOUNCE_MS = 100;
 
 class CKEditorComponent extends Component {
   editor = null;
-  contentClass = 'content-scope';
+
+  get contentClass() {
+    return this.args.contentClass || 'content-scope';
+  }
 
   get editorClass() {
     if (this.args.editor && this.args.editor.prototype instanceof Editor) {
