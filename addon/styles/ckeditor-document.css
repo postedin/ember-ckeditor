@@ -9,8 +9,8 @@
   --ckeditor-document-editable-content-min-height: 29.7cm;
   --ckeditor-document-editable-content-border: 1px #d3d3d3 solid;
   --ckeditor-document-editable-content-box-shadow: 0 0 5px rgba(0,0,0,.1);
-  --ckeditor-document-editable-content-width: width: 21cm;
-  --ckeditor-document-editable-content-padding: padding: 2cm;
+  --ckeditor-document-editable-content-width: 21cm;
+  --ckeditor-document-editable-content-padding: 2cm;
 }
 
 .ckeditor-document {
