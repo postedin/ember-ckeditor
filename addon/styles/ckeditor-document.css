@@ -2,19 +2,20 @@
 /* It doesn't account for the inner content styles, that is default for your website. */
 
 :root {
-  --ckeditor-document-background: #eee;
-  --ckeditor-document-editable-padding: 3rem 6rem;
-  --ckeditor-document-editable-max-height: 700px;
-  --ckeditor-document-editable-content-color: #fff;
-  --ckeditor-document-editable-content-min-height: 29.7cm;
-  --ckeditor-document-editable-content-border: 1px #d3d3d3 solid;
-  --ckeditor-document-editable-content-box-shadow: 0 0 5px rgba(0,0,0,.1);
-  --ckeditor-document-editable-content-width: 21cm;
-  --ckeditor-document-editable-content-padding: 2cm;
+  --ck-doc-background: #eee;
+  --ck-doc-editable-padding: 3rem 6rem;
+  --ck-doc-editable-height: 70vh;
+  --ck-doc-editable-max-height: 700px;
+  --ck-doc-editable-content-color: #fff;
+  --ck-doc-editable-content-min-height: 29.7cm;
+  --ck-doc-editable-content-border: 1px #d3d3d3 solid;
+  --ck-doc-editable-content-box-shadow: 0 0 5px rgba(0,0,0,.1);
+  --ck-doc-editable-content-width: 21cm;
+  --ck-doc-editable-content-padding: 2cm;
 }
 
 .ckeditor-document {
-  background-color: var(--ckeditor-document-background);
+  background-color: var(--ck-doc-background);
   border: 1px solid var(--ck-color-toolbar-border);
 }
 
@@ -25,18 +26,19 @@
 }
 
 .ckeditor-document-editable {
-  padding: var(--ckeditor-document-editable-padding);
-  max-height: var(--ckeditor-document-editable-max-height);
+  padding: var(--ck-doc-editable-padding);
+  height: var(--ck-doc-editable-height);
+  max-height: var(--ck-doc-editable-max-height);
   overflow-y: auto;
 }
 
 .ckeditor-document-editable .ck.ck-content {
-  border: var(--ckeditor-document-editable-content-border);
-  box-shadow: var(--ckeditor-document-editable-content-box-shadow);
-  background-color: var(--ckeditor-document-editable-content-color);
-  min-height: var(--ckeditor-document-editable-content-min-height);
-  width: var(--ckeditor-document-editable-content-width);
+  border: var(--ck-doc-editable-content-border);
+  box-shadow: var(--ck-doc-editable-content-box-shadow);
+  background-color: var(--ck-doc-editable-content-color);
+  min-height: var(--ck-doc-editable-content-min-height);
+  width: var(--ck-doc-editable-content-width);
   max-width: 100%;
   margin: 0 auto;
-  padding: var(--ckeditor-document-editable-content-padding);
+  padding: var(--ck-doc-editable-content-padding);
 }
