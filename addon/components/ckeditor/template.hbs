@@ -1,8 +1,13 @@
-<div ...attributes>
-  <div {{did-insert this.handleInsertedToolbar}}></div>
+<div class="{{if this.documentEditor 'ckeditor-document'}}" ...attributes>
   <div
-    {{did-insert (fn this.handleInsertElement)}}
-    {{did-update this.handleDisable @disabled}}
-    {{will-destroy (fn this.handleDestroyElement)}}
-  ></div>
+    class="{{if this.documentEditor 'ckeditor-document-toolbar'}}"
+    {{did-insert this.handleInsertedToolbar}}>
+  </div>
+  <div class="{{if this.documentEditor 'ckeditor-document-editable'}}">
+    <div
+      {{did-insert (fn this.handleInsertElement)}}
+      {{did-update this.handleDisable @disabled}}
+      {{will-destroy (fn this.handleDestroyElement)}}
+    ></div>
+  </div>
 </div>

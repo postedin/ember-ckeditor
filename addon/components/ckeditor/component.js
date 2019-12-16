@@ -4,7 +4,6 @@ import { later, cancel } from '@ember/runloop';
 import Editor from '@ckeditor/ckeditor5-core/src/editor/editor';
 import InlineEditor from '@postedin/ember-ckeditor/inline-editor';
 import ClassicEditor from '@postedin/ember-ckeditor/classic-editor';
-import SimpleEditor from '@postedin/ember-ckeditor/simple-editor';
 import CommentEditor from '@postedin/ember-ckeditor/comment-editor';
 import DocumentEditor from '@postedin/ember-ckeditor/document-editor';
 
@@ -21,12 +20,15 @@ class CKEditorComponent extends Component {
 
     switch (this.args.editor) {
       case 'inline': return InlineEditor;
-      case 'simple': return SimpleEditor;
       case 'comment': return CommentEditor;
       case 'document': return DocumentEditor;
     }
 
     return ClassicEditor;
+  }
+
+  get documentEditor() {
+    return this.editorClass === DocumentEditor;
   }
 
   get dead() {
@@ -63,7 +65,7 @@ class CKEditorComponent extends Component {
     try {
       editor = await this.editorClass.create(element, this.args.options);
 
-      if (this.args.editor === 'document') {
+      if (this.documentEditor) {
         this.toolbarElement.appendChild(editor.ui.view.toolbar.element);
       }
     } catch (error) {
@@ -135,6 +137,10 @@ class CKEditorComponent extends Component {
   }
 
   listenToUpload(editor) {
+    if (! editor.plugins.has('FileRepository')) {
+      return;
+    }
+
     let fileRepository = editor.plugins.get('FileRepository');
 
     if (fileRepository) {

@@ -5,11 +5,8 @@ class CommentEditor extends ClassicEditor {
   constructor(...args) {
     super(...args);
 
-    let view = this.ui.view;
-    view.stickyPanel.setTemplate({
-      tag: 'div',
-      attributes: {},
-      children: [],
+    this.on('ready', () => {
+      this.ui.view.top.remove(0);
     });
   }
 }

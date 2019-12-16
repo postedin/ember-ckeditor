@@ -1,0 +1,29 @@
+/* Document styles copied and modified from the official demo. https://ckeditor.com/ckeditor-5/demo/#document */
+/* It doesn't account for the inner content styles, that is default for your website. */
+
+:root {
+  --ckeditor-document-background: #eee;
+  --ckeditor-document-editable-padding: 3rem 6rem;
+  --ckeditor-document-editable-max-height: 700px;
+  --ckeditor-document-editable-content-color: #fff;
+  --ckeditor-document-editable-content-min-height: 29.7cm;
+}
+
+.ckeditor-document {
+  background-color: var(--ckeditor-document-background);
+}
+
+.ckeditor-document-toolbar {
+
+}
+
+.ckeditor-document-editable {
+  padding: var(--ckeditor-document-editable-padding);
+  max-height: var(--ckeditor-document-editable-max-height);
+  overflow-y: auto;
+}
+
+.ckeditor-document-editable .ck-content {
+  background-color: var(--ckeditor-document-editable-content-color);
+  min-height: var(--ckeditor-document-editable-content-min-height);
+}
