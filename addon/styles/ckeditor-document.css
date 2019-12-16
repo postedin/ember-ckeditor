@@ -27,8 +27,7 @@
   overflow-y: auto;
 }
 
-
-.ckeditor-document-editable .ck-content {
+.ckeditor-document-editable .ck.ck-content {
   border: var(--ckeditor-document-editable-content-border);
   box-shadow: var(--ckeditor-document-editable-content-box-shadow);
   background-color: var(--ckeditor-document-editable-content-color);
