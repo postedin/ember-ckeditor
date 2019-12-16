@@ -4,6 +4,16 @@ import { tracked } from '@glimmer/tracking';
 import SimpleUploadAdapter from '@postedin/ember-ckeditor/simple-upload-adapter';
 
 export default class ApplicationController extends Controller {
+  get editors() {
+    return ['default', 'comment', 'document'].map((type) => {
+      return {
+        type,
+        value: '',
+        options: {},
+      };
+    });
+  }
+
   options = {
     extraPlugins: [ SimpleUploadAdapter ],
     simpleUpload: {

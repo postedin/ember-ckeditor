@@ -4,7 +4,6 @@ import { later, cancel } from '@ember/runloop';
 import Editor from '@ckeditor/ckeditor5-core/src/editor/editor';
 import InlineEditor from '@postedin/ember-ckeditor/inline-editor';
 import ClassicEditor from '@postedin/ember-ckeditor/classic-editor';
-import SimpleEditor from '@postedin/ember-ckeditor/simple-editor';
 import CommentEditor from '@postedin/ember-ckeditor/comment-editor';
 
 const DEBOUNCE_MS = 100;
@@ -20,7 +19,6 @@ class CKEditorComponent extends Component {
 
     switch (this.args.editor) {
       case 'inline': return InlineEditor;
-      case 'simple': return SimpleEditor;
       case 'comment': return CommentEditor;
     }
 
@@ -124,6 +122,10 @@ class CKEditorComponent extends Component {
   }
 
   listenToUpload(editor) {
+    if (! editor.plugins.has('FileRepository')) {
+      return;
+    }
+
     let fileRepository = editor.plugins.get('FileRepository');
 
     if (fileRepository) {

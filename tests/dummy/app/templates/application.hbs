@@ -1,28 +1,15 @@
-<h2 id="title">Welcome to Ember</h2>
-
-<div class="tailwind p-12 flex flex-col">
-  <div class="mb-5">
-    <h3 class="font-semibold">Rework: Default</h3>
-    <div>
-      <label>
-        Disabled: <input type="checkbox" onclick={{action (mut disabled) value='target.checked'}} />
-      </label>
-    </div>
-    <div class="flex spaced">
-      <div class="w-1/2">
-        <CKEditor @value={{default}} @disabled={{disabled}} @onInput={{action (mut default)}} @onUpload={{action 'uploaded'}} @options={{this.options}} />
-      </div>
-      <div class="w-1/2">
-        <div class="mb-3 ui-box ui-box-padded">
-          <div class="content-scope">{{{default}}}</div>
+<div class="container w-full mx-auto pt-20">
+  {{#each this.editors as |editor|}}
+    <div class="pb-10">
+      <div>{{editor.type}}</div>
+      <div class="flex">
+        <div class="width-1/2 mr-5">
+          <CKEditor @editor={{editor.type}} @value={{editor.value}} @onInput={{action (mut editor.value)}} />
         </div>
-        {{#if this.uploads.length}}
-          Uploads:
-          {{#each this.uploads as |upload|}}
-            <div>{{upload.default}}</div>
-          {{/each}}
-        {{/if}}
+        <div class="width-1/2">
+          {{{editor.value}}}
+        </div>
       </div>
     </div>
-  </div>
+  {{/each}}
 </div>
