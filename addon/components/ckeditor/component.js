@@ -2,10 +2,10 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { later, cancel } from '@ember/runloop';
 import Editor from '@ckeditor/ckeditor5-core/src/editor/editor';
-import InlineEditor from '@postedin/ember-ckeditor/inline-editor';
-import ClassicEditor from '@postedin/ember-ckeditor/classic-editor';
-import CommentEditor from '@postedin/ember-ckeditor/comment-editor';
-import DocumentEditor from '@postedin/ember-ckeditor/document-editor';
+import InlineEditor from '@postedin/ember-ckeditor-es/inline-editor';
+import ClassicEditor from '@postedin/ember-ckeditor-es/classic-editor';
+import CommentEditor from '@postedin/ember-ckeditor-es/comment-editor';
+import DocumentEditor from '@postedin/ember-ckeditor-es/document-editor';
 
 const DEBOUNCE_MS = 100;
 
