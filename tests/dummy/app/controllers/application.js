@@ -13,7 +13,9 @@ export default class ApplicationController extends Controller {
       return {
         type,
         value: values[type] || '',
-        options: {},
+        options: {
+          language: type === 'document' ? 'es' : 'en',
+        },
       };
     });
   }

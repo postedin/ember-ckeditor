@@ -68,7 +68,7 @@ ClassicEditor.defaultConfig = {
       'tableColumn', 'tableRow', 'mergeTableCells',
     ],
   },
-  language: 'en',
+  language: 'es',
 };
 
 export default ClassicEditor;
