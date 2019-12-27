@@ -1,6 +1,6 @@
 {
   "name": "@postedin/ember-ckeditor-es",
-  "version": "0.5.8",
+  "version": "0.5.9",
   "description": "Unofficial Ember.js component for CKEditor 5 – the best browser-based rich text editor.",
   "keywords": [
     "ember-addon",

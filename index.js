@@ -12,7 +12,7 @@ module.exports = {
     autoImport: {
       webpack: {
         plugins: [
-          new CKEditorWebpackPlugin({ language: 'en' }),
+          new CKEditorWebpackPlugin({ language: 'es' }),
           new MiniCssExtractPlugin({
             filename: 'ckeditor-lark.css'
           }),
