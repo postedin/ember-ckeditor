@@ -27,6 +27,9 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
+import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
+
 
 export default class DecoupledEditor extends DecoupledEditorBase {}
 
@@ -57,7 +60,9 @@ DecoupledEditor.builtinPlugins = [
   Paragraph,
   PasteFromOffice,
   Table,
-  TableToolbar
+  TableToolbar,
+  TableProperties,
+  TableCellProperties,
 ];
 
 DecoupledEditor.defaultConfig = {
@@ -70,22 +75,23 @@ DecoupledEditor.defaultConfig = {
       'numberedList', 'bulletedList', '|',
       'indent', 'outdent', '|',
       'link', 'blockquote', 'imageUpload', 'insertTable', 'mediaEmbed', '|',
-      'undo', 'redo'
+      'undo', 'redo',
     ]
   },
   image: {
     styles: [
-      'full', 'alignLeft', 'alignRight'
+      'full', 'alignLeft', 'alignRight',
     ],
     toolbar: [
       'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight', '|',
-      'imageTextAlternative'
+      'imageTextAlternative',
     ]
   },
   table: {
     contentToolbar: [
-      'tableColumn', 'tableRow', 'mergeTableCells'
+      'tableColumn', 'tableRow', 'mergeTableCells',
+      'tableProperties', 'tableCellProperties',
     ]
   },
-  language: 'en'
+  language: 'en',
 };
