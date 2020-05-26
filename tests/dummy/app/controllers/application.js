@@ -14,7 +14,20 @@ export default class ApplicationController extends Controller {
         type,
         value: values[type] || '',
         options: {
-          language: type === 'document' ? 'es' : 'en',
+          // language: type === 'document' ? 'es' : 'en',
+          link: {
+            decorators: {
+              addTargetToLinks: {
+                mode: 'manual',
+                label: 'Open in a new tab',
+                defaultValue: true,
+                attributes: {
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                },
+              },
+            },
+          },
         },
       };
     });

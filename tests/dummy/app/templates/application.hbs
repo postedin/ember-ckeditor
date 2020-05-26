@@ -4,7 +4,7 @@
       <div>{{editor.type}}</div>
       <div class="flex">
         <div class="width-1/2 mr-5">
-          <CKEditor @editor={{editor.type}} @value={{editor.value}} @onInput={{action (mut editor.value)}} />
+          <CKEditor @editor={{editor.type}} @options={{editor.options}} @value={{editor.value}} @onInput={{action (mut editor.value)}} />
         </div>
         <div class="width-1/2">
           {{{editor.value}}}
