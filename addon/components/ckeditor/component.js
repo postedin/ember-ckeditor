@@ -1,11 +1,6 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
-import { later, cancel } from '@ember/runloop';
-import Editor from '@ckeditor/ckeditor5-core/src/editor/editor';
-import InlineEditor from '@postedin/ember-ckeditor/inline-editor';
-import ClassicEditor from '@postedin/ember-ckeditor/classic-editor';
-import CommentEditor from '@postedin/ember-ckeditor/comment-editor';
-import DocumentEditor from '@postedin/ember-ckeditor/document-editor';
+import { debounce } from '@ember/runloop';
 
 const DEBOUNCE_MS = 100;
 
@@ -16,42 +11,15 @@ class CKEditorComponent extends Component {
     return this.args.contentClass || 'content-scope';
   }
 
-  get editorClass() {
-    if (this.args.editor && this.args.editor.prototype instanceof Editor) {
-      return this.args.editor;
-    }
-
-    switch (this.args.editor) {
-      case 'inline': return InlineEditor;
-      case 'comment': return CommentEditor;
-      case 'document': return DocumentEditor;
-    }
-
-    return ClassicEditor;
-  }
-
-  get documentEditor() {
-    return this.editorClass === DocumentEditor;
-  }
-
-  get dead() {
-    return this.isDestroying || this.isDestroyed;
-  }
-
   @action
-  handleInsertElement(element) {
-    this.createEditor(element);
-  }
-
-  @action
-  handleDisable(element, [ disabled ]) {
+  watch() {
     if (this.editor) {
-      this.editor.isReadOnly = disabled;
+      this.editor.isReadOnly = this.args.disabled;
     }
   }
 
   @action
-  handleDestroyElement() {
+  cleanUp() {
     if (this.editor) {
       this.editor.destroy();
     }
@@ -62,6 +30,7 @@ class CKEditorComponent extends Component {
     this.toolbarElement = element;
   }
 
+  @action
   async createEditor(element) {
     let editor;
 
@@ -71,12 +40,12 @@ class CKEditorComponent extends Component {
       if (this.documentEditor) {
         this.toolbarElement.appendChild(editor.ui.view.toolbar.element);
       }
+
+      this.initialize(editor);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error);
     }
-
-    this.initialize(editor);
   }
 
   initialize(editor) {
@@ -101,9 +70,7 @@ class CKEditorComponent extends Component {
     this.listenToFocus(editor);
     this.listenToUpload(editor);
 
-    if (this.args.onReady) {
-      this.args.onReady(editor);
-    }
+    this.callback(this.args.onReady, editor);
   }
 
   addContentClass(editor, contentClass) {
@@ -118,25 +85,22 @@ class CKEditorComponent extends Component {
   }
 
   listenToChanges(editor) {
-    editor.model.document.on('change', () => {
-      if (this.debounce) {
-        cancel(this.debounce);
-      }
-
-      this.debounce = later(() => {
+    editor.model.document.on('change:data', () => {
+      const editorInput = () => {
         this.editorInput(editor.getData());
-      }, DEBOUNCE_MS);
+      };
+
+      debounce({}, editorInput, DEBOUNCE_MS);
+
+      // this.debounce = later(() => {
+      //   this.editorInput(editor.getData());
+      // }, DEBOUNCE_MS);
     });
   }
 
   listenToFocus(editor) {
-    editor.ui.focusTracker.on('change:isFocused', (event) => {
-      if (event.source.isFocused) {
-        this.editorFocus();
-      } else {
-        this.editorBlur();
-      }
-    });
+    editor.editing.view.document.on('focus', () => this.editorFocus());
+    editor.editing.view.document.on('blur', () => this.editorBlur());
   }
 
   listenToUpload(editor) {
@@ -157,44 +121,30 @@ class CKEditorComponent extends Component {
     }
   }
 
-  editorInput(value) {
-    if (this.dead) {
+  callback(callback, ...args) {
+    if (this.isDestroying || this.isDestroyed) {
       return;
     }
 
-    if (this.args.onInput) {
-      this.args.onInput(value);
+    if (callback) {
+      callback(...args);
     }
+  }
+
+  editorInput(value) {
+    this.callback(this.args.onInput, value)
   }
 
   editorFocus() {
-    if (this.dead) {
-      return;
-    }
-
-    if (this.args.onFocus) {
-      this.args.onFocus();
-    }
+    this.callback(this.args.onFocus);
   }
 
   editorBlur() {
-    if (this.dead) {
-      return;
-    }
-
-    if (this.args.onBlur) {
-      this.args.onBlur();
-    }
+    this.callback(this.args.onBlur);
   }
 
   editorUpload(response) {
-    if (this.dead) {
-      return;
-    }
-
-    if (this.args.onUpload) {
-      this.args.onUpload(response);
-    }
+    this.callback(this.args.onUpload, response);
   }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "@postedin/ember-ckeditor",
-  "version": "0.5.6",
+  "version": "1.0.0.beta.1",
   "description": "Unofficial Ember.js component for CKEditor 5 – the best browser-based rich text editor.",
   "keywords": [
     "ember-addon",
@@ -43,39 +43,9 @@
     "test:ember-compatibility": "ember try:each"
   },
   "dependencies": {
-    "@ckeditor/ckeditor5-alignment": "^16.0.0",
-    "@ckeditor/ckeditor5-autoformat": "^16.0.0",
-    "@ckeditor/ckeditor5-basic-styles": "^16.0.0",
-    "@ckeditor/ckeditor5-block-quote": "^16.0.0",
-    "@ckeditor/ckeditor5-core": "^16.0.0",
-    "@ckeditor/ckeditor5-dev-utils": "^12.0.5",
-    "@ckeditor/ckeditor5-dev-webpack-plugin": "^8.0.5",
-    "@ckeditor/ckeditor5-editor-classic": "^16.0.0",
-    "@ckeditor/ckeditor5-editor-decoupled": "^16.0.0",
-    "@ckeditor/ckeditor5-editor-inline": "^16.0.0",
-    "@ckeditor/ckeditor5-essentials": "^16.0.0",
-    "@ckeditor/ckeditor5-font": "^16.0.0",
-    "@ckeditor/ckeditor5-heading": "^16.0.0",
-    "@ckeditor/ckeditor5-highlight": "^16.0.0",
-    "@ckeditor/ckeditor5-image": "^16.0.0",
-    "@ckeditor/ckeditor5-indent": "^16.0.0",
-    "@ckeditor/ckeditor5-link": "^16.0.0",
-    "@ckeditor/ckeditor5-list": "^16.0.0",
-    "@ckeditor/ckeditor5-media-embed": "^16.0.0",
-    "@ckeditor/ckeditor5-paragraph": "^16.0.0",
-    "@ckeditor/ckeditor5-paste-from-office": "^16.0.0",
-    "@ckeditor/ckeditor5-table": "^16.0.0",
-    "@ckeditor/ckeditor5-theme-lark": "^16.0.0",
-    "@ckeditor/ckeditor5-upload": "https://github.com/robclancy/ckeditor5-upload.git#patch-2",
     "@ember/render-modifiers": "^1.0.2",
-    "@glimmer/component": "1.0.0-beta.3",
-    "css-loader": "^3.2.1",
-    "ember-auto-import": "^1.6.0",
-    "ember-cli-babel": "^7.21.0",
-    "ember-cli-htmlbars": "^5.2.0",
-    "mini-css-extract-plugin": "^0.8.0",
-    "postcss-loader": "^3.0.0",
-    "raw-loader": "^3.1.0"
+    "ember-cli-babel": "^7.20.5",
+    "ember-cli-htmlbars": "^5.1.2"
   },
   "devDependencies": {
     "@ember/optional-features": "^1.3.0",
@@ -87,7 +57,7 @@
     "ember-cli-dependency-checker": "^3.2.0",
     "ember-cli-inject-live-reload": "^2.0.2",
     "ember-cli-mirage": "^1.1.4",
-    "ember-cli-postcss": "^5.0.0",
+    "ember-cli-postcss": "^6.0.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-uglify": "^3.0.0",
     "ember-disable-prototype-extensions": "^1.1.3",
@@ -104,16 +74,13 @@
     "eslint-plugin-ember": "^8.9.1",
     "eslint-plugin-node": "^11.1.0",
     "express": "^4.8.5",
-    "glob": "^4.0.5",
+    "glob": "^7.1.6",
     "loader.js": "^4.7.0",
     "morgan": "^1.3.2",
     "npm-run-all": "^4.1.5",
     "postcss-import": "^12.0.1",
     "qunit-dom": "^1.2.0",
     "tailwindcss": "^1.1.4"
-  },
-  "resolutions": {
-    "@ckeditor/ckeditor5-upload": "https://github.com/robclancy/ckeditor5-upload.git#patch-2"
   },
   "engines": {
     "node": "10.* || >= 12"
