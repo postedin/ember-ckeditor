@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
-import { debounce } from '@ember/runloop';
+import { later, cancel } from '@ember/runloop';
 
 const DEBOUNCE_MS = 100;
 
@@ -26,7 +26,7 @@ class CKEditorComponent extends Component {
   }
 
   @action
-  handleInsertedToolbar(element) {
+  setupToolbar(element) {
     this.toolbarElement = element;
   }
 
@@ -35,9 +35,9 @@ class CKEditorComponent extends Component {
     let editor;
 
     try {
-      editor = await this.editorClass.create(element, this.args.options);
+      editor = await this.args.editor.create(element, this.args.options);
 
-      if (this.documentEditor) {
+      if (this.args.editor?.document) {
         this.toolbarElement.appendChild(editor.ui.view.toolbar.element);
       }
 
@@ -86,15 +86,13 @@ class CKEditorComponent extends Component {
 
   listenToChanges(editor) {
     editor.model.document.on('change:data', () => {
-      const editorInput = () => {
+      if (this.debounce) {
+        cancel(this.debounce);
+      }
+
+      this.debounce = later(() => {
         this.editorInput(editor.getData());
-      };
-
-      debounce({}, editorInput, DEBOUNCE_MS);
-
-      // this.debounce = later(() => {
-      //   this.editorInput(editor.getData());
-      // }, DEBOUNCE_MS);
+      }, DEBOUNCE_MS);
     });
   }
 

@@ -1,10 +1,10 @@
 <div class="container w-full mx-auto pt-10">
   {{#each this.editors as |editor|}}
     <div class="pb-10">
-      <div>{{editor.type}}</div>
+      <div>{{editor.name}}</div>
       <div class="flex">
         <div class="width-1/2 mr-5">
-          <CKEditor @editor={{editor.type}} @value={{editor.value}} @onInput={{action (mut editor.value)}} />
+          <CKEditor @editor={{editor.editor}} @value={{editor.value}} @options={{editor.options}} @onInput={{action (mut editor.value)}} />
         </div>
         <div class="width-1/2">
           {{{editor.value}}}

@@ -20,5 +20,7 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
+  app.import('node_modules/@postedin/ckeditor5-build-combined/build/translations/es.js');
+
   return app.toTree();
 };

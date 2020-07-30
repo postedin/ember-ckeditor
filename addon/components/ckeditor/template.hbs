@@ -1,9 +1,9 @@
-<div class="{{if this.documentEditor 'ckeditor-document'}}" ...attributes>
+<div class="{{if @editor.document 'ckeditor-document'}}" ...attributes>
   <div
-    class="{{if this.documentEditor 'ckeditor-document-toolbar'}}"
-    {{did-insert this.handleInsertedToolbar}}>
+    class="{{if @editor.document 'ckeditor-document-toolbar'}}"
+    {{did-insert this.setupToolbar}}>
   </div>
-  <div class="{{if this.documentEditor 'ckeditor-document-editable'}}">
+  <div class="{{if @editor.document 'ckeditor-document-editable'}}">
     <div
       {{did-insert (fn this.createEditor)}}
       {{did-update this.disable @disabled}}
