@@ -86,6 +86,12 @@ class CKEditorComponent extends Component {
 
   listenToChanges(editor) {
     editor.model.document.on('change:data', () => {
+      let data = this.fixPaste(editor.getData());
+
+      if (data !== editor.getData()) {
+        editor.setData(data);
+      }
+
       if (this.debounce) {
         cancel(this.debounce);
       }
@@ -94,6 +100,12 @@ class CKEditorComponent extends Component {
         this.editorInput(editor.getData());
       }, DEBOUNCE_MS);
     });
+  }
+
+  fixPaste(html) {
+    return html
+      .replace('<p>&lt;!--td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}--&gt;</p>', '')
+      .replace('&lt;!--td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}--&gt;', '');
   }
 
   listenToFocus(editor) {
