@@ -55,7 +55,7 @@ DecoupledEditor.builtinPlugins = [
   Paragraph,
   PasteFromOffice,
   Table,
-  TableToolbar
+  TableToolbar,
 ];
 
 DecoupledEditor.defaultConfig = {
@@ -68,22 +68,22 @@ DecoupledEditor.defaultConfig = {
       'numberedList', 'bulletedList', '|',
       'indent', 'outdent', '|',
       'link', 'blockquote', 'imageUpload', 'insertTable', 'mediaEmbed', '|',
-      'undo', 'redo'
-    ]
+      'undo', 'redo',
+    ],
   },
   image: {
     styles: [
-      'full', 'alignLeft', 'alignRight'
+      'full', 'alignLeft', 'alignRight',
     ],
     toolbar: [
       'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight', '|',
-      'imageTextAlternative'
-    ]
+      'imageTextAlternative',
+    ],
   },
   table: {
     contentToolbar: [
-      'tableColumn', 'tableRow', 'mergeTableCells'
-    ]
+      'tableColumn', 'tableRow', 'mergeTableCells',
+    ],
   },
-  language: 'en'
+  language: 'en',
 };

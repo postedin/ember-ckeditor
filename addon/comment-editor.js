@@ -1,5 +1,5 @@
-import ClassicEditor from './classic-editor';
 import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
+import ClassicEditor from './classic-editor';
 
 class CommentEditor extends ClassicEditor {
   constructor(...args) {

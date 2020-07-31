@@ -1,5 +1,3 @@
-'use strict';
-
 const { setEdition } = require('@ember/edition-utils');
 
 setEdition('octane');
@@ -10,5 +8,5 @@ module.exports = {
     anonymous, but there are times when you might want to disable this behavior.
     Setting `disableAnalytics` to true will prevent any data from being sent.
   */
-  disableAnalytics: false
+  disableAnalytics: false,
 };
