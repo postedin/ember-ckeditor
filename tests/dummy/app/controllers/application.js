@@ -1,10 +1,7 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
-import { ClassicEditor, CommentEditor, DecoupledEditor, UpcastWriter } from '@postedin/ckeditor5-build-combined';
-// import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
-
-// import SimpleUploadAdapter from '@postedin/ember-ckeditor/simple-upload-adapter';
+import { ClassicEditor, CommentEditor, DecoupledEditor, UpcastWriter, SimpleUploadAdapter } from '@postedin/ckeditor5-build-combined';
 
 export default class ApplicationController extends Controller {
   classic = ClassicEditor;
