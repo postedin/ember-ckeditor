@@ -73,6 +73,10 @@ class CKEditorComponent extends Component {
     this.callback(this.args.onReady, editor);
   }
 
+  defaultExternalLinks(editor) {
+
+  }
+
   addContentClass(editor, contentClass) {
     let view = editor.ui.view.editable;
     let editingView = view._editingView;

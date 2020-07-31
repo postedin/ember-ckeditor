@@ -1,6 +1,6 @@
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
-module.exports = function (defaults) {
+module.exports = function(defaults) {
   const app = new EmberAddon(defaults, {
     postcssOptions: {
       compile: {
@@ -19,6 +19,7 @@ module.exports = function (defaults) {
   */
 
   app.import('node_modules/@postedin/ckeditor5-build-combined/build/translations/es.js');
+  app.import('node_modules/@postedin/ckeditor5-build-combined/build/ckeditor-lark.css');
 
   return app.toTree();
 };
