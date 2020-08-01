@@ -1124,10 +1124,10 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@postedin/ckeditor5-build-combined@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@postedin/ckeditor5-build-combined/-/ckeditor5-build-combined-0.2.2.tgz#9c18f0ad217bb4b8ed991c3fccd986289de55b35"
-  integrity sha512-abl10mxgJjrLIwNMvBL4BN0SirbYlPekkiONZTyVgDFyPAxTFrK7vsvD0lBywuXY7mOVitWM0JThZru+FH0pSw==
+"@postedin/ckeditor5-build-combined@^1.0.0":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@postedin/ckeditor5-build-combined/-/ckeditor5-build-combined-1.0.5.tgz#9a1605bb746bc176ace69a86e71c636e87cdc12c"
+  integrity sha512-bNTudeo83kXPt5t0nk6krC3mQPTtWgYQetVfGugy5ziRva4MVKH7e3X7mfP2T8XBBk6QnqGvsOodCh6KECDkAA==
 
 "@simple-dom/interface@^1.4.0":
   version "1.4.0"
@@ -1422,9 +1422,9 @@
   integrity sha512-FZdkNBDqBRHKQ2MEbSC17xnPFOhZxeJ2YGSfr2BKf3sujG49Qe3bB+rGCwQfIaA7WHnGeGkSijX4FuBCdrzW/g==
 
 abab@^2.0.0:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.3.tgz#623e2075e02eb2d3f2475e49f99c91846467907a"
-  integrity sha512-tsFzPpcttalNjFBCFMqsKYQcWxxen1pgJR56by//QwvJc4/OUS3kPOOttx2tSIfjsylB0pYu7f5D3K1RCxUnUg==
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.4.tgz#6dfa57b417ca06d21b2478f0e638302f99c2405c"
+  integrity sha512-Eu9ELJWCz/c1e9gTiCY+FceWxcqzjYEbqMgtndnuSqZSUCOL73TWNK2mHfIj4Cw2E/ongOp+JISVNCmovt2KYQ==
 
 abbrev@1:
   version "1.1.1"
@@ -2093,12 +2093,12 @@ babel-plugin-ember-modules-api-polyfill@^2.6.0:
   dependencies:
     ember-rfc176-data "^0.3.13"
 
-babel-plugin-ember-modules-api-polyfill@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-ember-modules-api-polyfill/-/babel-plugin-ember-modules-api-polyfill-3.1.0.tgz#02e2e6ab4220b28692a4bc08a5eb81ff96313a5f"
-  integrity sha512-TfyzenLPEZPorhO0omUUVpdQS+iKGehF4refqxP9znQN6MnjtxjSiGfRNnWY1syjK2/zCEuxIB91TmqrR/9bCg==
+babel-plugin-ember-modules-api-polyfill@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-ember-modules-api-polyfill/-/babel-plugin-ember-modules-api-polyfill-3.1.1.tgz#c6e9ede43b64c4e36512f260e42e829b071d9b4f"
+  integrity sha512-hRTnr59fJ6cIiSiSgQLM9QRiVv/RrBAYRYggCPQDj4dvYhOWZeoX6e+1jFY1qC3tJnSDuMWu3OrDciSIi1MJ0A==
   dependencies:
-    ember-rfc176-data "^0.3.14"
+    ember-rfc176-data "^0.3.15"
 
 babel-plugin-filter-imports@^4.0.0:
   version "4.0.0"
@@ -4438,9 +4438,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.47, electron-to-chromium@^1.3.488:
-  version "1.3.515"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.515.tgz#96683d2c2be9bf83f6cca75d504a7b443d763c08"
-  integrity sha512-C9h2yLQwNSK/GTtWQsA9O6mLKv0ubmiAQgmz1HvHnAIH8g5Sje1shWxcooumbGiwgqvZ9yrTYULe4seMTgMYqQ==
+  version "1.3.516"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.516.tgz#03ec071b061e462b786bf7e7ce226fd7ab7cf1f6"
+  integrity sha512-WDM5AAQdOrvLqSX8g3Zd5AujBXfMxf96oeZkff0U2HF5op3tjShE+on2yay3r1UD4M9I3p0iHpAS4+yV8U8A9A==
 
 elliptic@^6.0.0, elliptic@^6.5.2:
   version "6.5.3"
@@ -4522,9 +4522,9 @@ ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.3.0, ember-cli-babel@^6.6.0, e
     semver "^5.5.0"
 
 ember-cli-babel@^7.1.0, ember-cli-babel@^7.10.0, ember-cli-babel@^7.11.0, ember-cli-babel@^7.12.0, ember-cli-babel@^7.18.0, ember-cli-babel@^7.19.0, ember-cli-babel@^7.20.5, ember-cli-babel@^7.5.0, ember-cli-babel@^7.7.3:
-  version "7.22.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-7.22.0.tgz#ef9d56aaa77e5ef2ad894dba20a91492b89e34d0"
-  integrity sha512-uy3Ye8AMUJycGX0m6Gi39hLyJ0oIGgIO/cg4EGK+xsXLyBbxoV6m2Dzi2gFKsCGq/2XafOCpX5qtCSWWd8JFIw==
+  version "7.22.1"
+  resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-7.22.1.tgz#cad28b89cf0e184c93b863d09bc5ba4ce1d2e453"
+  integrity sha512-kCT8WbC1AYFtyOpU23ESm22a+gL6fWv8Nzwe8QFQ5u0piJzM9MEudfbjADEaoyKTrjMQTDsrWwEf3yjggDsOng==
   dependencies:
     "@babel/core" "^7.11.0"
     "@babel/helper-compilation-targets" "^7.10.4"
@@ -4539,7 +4539,7 @@ ember-cli-babel@^7.1.0, ember-cli-babel@^7.10.0, ember-cli-babel@^7.11.0, ember-
     amd-name-resolver "^1.2.1"
     babel-plugin-debug-macros "^0.3.3"
     babel-plugin-ember-data-packages-polyfill "^0.1.2"
-    babel-plugin-ember-modules-api-polyfill "^3.1.0"
+    babel-plugin-ember-modules-api-polyfill "^3.1.1"
     babel-plugin-module-resolver "^3.1.1"
     broccoli-babel-transpiler "^7.7.0"
     broccoli-debug "^0.6.4"
@@ -4945,10 +4945,10 @@ ember-resolver@^8.0.0:
     ember-cli-version-checker "^5.0.2"
     resolve "^1.15.1"
 
-ember-rfc176-data@^0.3.13, ember-rfc176-data@^0.3.14:
-  version "0.3.14"
-  resolved "https://registry.yarnpkg.com/ember-rfc176-data/-/ember-rfc176-data-0.3.14.tgz#308808aa4bfdb655e6c3624fbe774699906c59ed"
-  integrity sha512-C4so9WmmDpRiAZYEzmFwgOSGyFCOL53vKkDuC3YXmbHF+fwDgBl18wt/N6D6pgHF9xXjt+WjHX0QTQzg3tOCyw==
+ember-rfc176-data@^0.3.13, ember-rfc176-data@^0.3.15:
+  version "0.3.15"
+  resolved "https://registry.yarnpkg.com/ember-rfc176-data/-/ember-rfc176-data-0.3.15.tgz#af3f1da5a0339b6feda380edc2f7190e0f416c2d"
+  integrity sha512-GPKa7zRDBblRy0orxTXt5yrpp/Pf5CkuRFSIR8qMFDww0CqCKjCRwdZnWYzCM4kAEfZnXRIDDefe1tBaFw7v7w==
 
 ember-router-generator@^2.0.0:
   version "2.0.0"
@@ -5357,9 +5357,9 @@ eslint-visitor-keys@^1.0.0, eslint-visitor-keys@^1.1.0, eslint-visitor-keys@^1.3
   integrity sha512-6J72N8UNa462wa/KFODt/PJ3IU60SDpC3QXC1Hjc1BXXpfL2C9R5+AU7jhe0F6GREqVMh4Juu+NY7xn+6dipUQ==
 
 eslint@^7.5.0:
-  version "7.5.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.5.0.tgz#9ecbfad62216d223b82ac9ffea7ef3444671d135"
-  integrity sha512-vlUP10xse9sWt9SGRtcr1LAC67BENcQMFeV+w5EvLEoFe3xJ8cF1Skd0msziRx/VMC+72B4DxreCE+OR12OA6Q==
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.6.0.tgz#522d67cfaea09724d96949c70e7a0550614d64d6"
+  integrity sha512-QlAManNtqr7sozWm5TF4wIH9gmUm2hE3vNRUvyoYAa4y1l5/jxD/PQStEjBMQtCqZmSep8UxrcecI60hOpe61w==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     ajv "^6.10.0"

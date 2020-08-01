@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
-import { ClassicEditor, CommentEditor, DecoupledEditor, UpcastWriter, SimpleUploadAdapter } from '@postedin/ckeditor5-build-combined';
+import { ClassicEditor, CommentEditor, DecoupledEditor, SimpleUploadAdapter, injectExternalLinkPaste } from '@postedin/ckeditor5-build-combined';
 
 export default class ApplicationController extends Controller {
   classic = ClassicEditor;
@@ -19,43 +19,11 @@ export default class ApplicationController extends Controller {
         options: {
           language: 'en',
           link: {
-            // addTargetToExternalLinks: true,
-            decorators: {
-              addTargetToLinks: {
-                mode: 'manual',
-                label: 'Open in new tab',
-                defaultValue: true,
-                attributes: {
-                  target: '_blank',
-                  rel: 'noopener noreferrer',
-                },
-              },
-            },
+            addTargetToExternalLinks: true,
           },
         },
         onReady(editor) {
-          const writer = new UpcastWriter(editor.editing.view.document);
-
-          editor.plugins.get('Clipboard').on('inputTransformation', (evt, data) => {
-            const element = data.content.getChild(0);
-
-            if (element.name === 'a') {
-              writer.setAttribute('target', '_blank', element);
-              writer.setAttribute('rel', 'noopener noreferrer', element);
-
-              data.content = writer.createDocumentFragment([
-                writer.createElement(
-                  element.name,
-                  {
-                    href:  element.getAttribute('href'),
-                    target: element.getAttribute('target'),
-                    rel: element.getAttribute('rel')
-                  },
-                  [ writer.createText(element.getAttribute('href')) ],
-                )
-              ]);
-            }
-          }, { priority : 'high' } );
+          injectExternalLinkPaste(editor);
         },
       },
       {
