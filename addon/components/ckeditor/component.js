@@ -37,7 +37,7 @@ class CKEditorComponent extends Component {
     try {
       editor = await this.args.editor.create(element, this.args.options);
 
-      if (this.args.editor?.document) {
+      if (this.args.editor && this.args.editor.document) {
         this.toolbarElement.appendChild(editor.ui.view.toolbar.element);
       }
 
