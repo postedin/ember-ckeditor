@@ -103,9 +103,16 @@ class CKEditorComponent extends Component {
   }
 
   fixPaste(html) {
-    return html
-      .replace('<p>&lt;!--td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}--&gt;</p>', '')
-      .replace('&lt;!--td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}--&gt;', '');
+    let randomCodes = [
+      '&lt;!--td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}--&gt;',
+      '&lt;!--br {mso-data-placement:same-cell;}--&gt;',
+    ];
+
+    for (let code of randomCodes) {
+      html = html.replace(`<p>${code}</p>`, '').replace(code, '');
+    }
+
+    return html;
   }
 
   listenToFocus(editor) {
