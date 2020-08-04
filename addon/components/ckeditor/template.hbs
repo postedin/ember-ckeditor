@@ -6,7 +6,7 @@
   <div class="{{if @editor.document 'ckeditor-document-editable'}}">
     <div
       {{did-insert (fn this.createEditor)}}
-      {{did-update this.disable @disabled}}
+      {{did-update this.watch @disabled}}
       {{will-destroy (fn this.cleanUp)}}
     ></div>
   </div>
