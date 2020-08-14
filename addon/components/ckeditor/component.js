@@ -86,17 +86,17 @@ class CKEditorComponent extends Component {
 
   listenToChanges(editor) {
     editor.model.document.on('change:data', () => {
-      let data = this.fixPaste(editor.getData());
-
-      if (data !== editor.getData()) {
-        editor.setData(data);
-      }
-
       if (this.debounce) {
         cancel(this.debounce);
       }
 
       this.debounce = later(() => {
+        let data = this.fixPaste(editor.getData());
+
+        if (data !== editor.getData()) {
+          editor.setData(data);
+        }
+
         this.editorInput(editor.getData());
       }, DEBOUNCE_MS);
     });
