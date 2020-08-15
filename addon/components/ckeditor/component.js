@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { later, cancel } from '@ember/runloop';
 
-const DEBOUNCE_MS = 100;
+const DEBOUNCE_MS = 250;
 
 class CKEditorComponent extends Component {
   editor = null;
