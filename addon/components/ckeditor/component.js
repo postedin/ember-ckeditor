@@ -86,6 +86,12 @@ class CKEditorComponent extends Component {
 
   listenToChanges(editor) {
     editor.model.document.on('change:data', () => {
+      let debounceMs = parseInt(this.args.debounce);
+
+      if (isNaN(debounceMs)) {
+        debounceMs = DEBOUNCE_MS;
+      }
+
       if (this.debounce) {
         cancel(this.debounce);
       }
@@ -98,7 +104,7 @@ class CKEditorComponent extends Component {
         }
 
         this.editorInput(editor.getData());
-      }, DEBOUNCE_MS);
+      }, debounceMs);
     });
   }
 
