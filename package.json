@@ -1,6 +1,6 @@
 {
   "name": "@postedin/ember-ckeditor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Unofficial Ember.js component for CKEditor 5 – the best browser-based rich text editor.",
   "keywords": [
     "ember-addon",
@@ -43,7 +43,6 @@
     "test:ember-compatibility": "ember try:each"
   },
   "dependencies": {
-    "@ckeditor/ckeditor5-engine": "^21.0.0",
     "@ember/render-modifiers": "^1.0.2",
     "ember-auto-import": "^1.6.0",
     "ember-cli-babel": "^7.20.5",
