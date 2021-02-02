@@ -1226,9 +1226,9 @@
     fastq "^1.6.0"
 
 "@postedin/ckeditor5-build-combined@^1.0.0":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@postedin/ckeditor5-build-combined/-/ckeditor5-build-combined-1.3.1.tgz#723f684cc7acdab29cf475cec210b901e1bc56bd"
-  integrity sha512-Mz4SZ8rlb1JGLHRXO/wMwcvT3nu+42KAYHlASaAxWkSlZJruQsjgO2BJNhlh2GGTGbNmtZlN5RLT7ScF531p8g==
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@postedin/ckeditor5-build-combined/-/ckeditor5-build-combined-1.3.3.tgz#f6e70156e0d57858431df9cefaf7f7953998cc1b"
+  integrity sha512-iXiXFFq7ZXnxh9uCGwy/aSdCj594h/qRCaWvXYCiStLKSQfLQrFkCaXIt5K5gS2Bv4krics1++qXY8kJ5IfChQ==
 
 "@simple-dom/interface@^1.4.0":
   version "1.4.0"
