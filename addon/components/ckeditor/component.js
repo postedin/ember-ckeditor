@@ -51,7 +51,7 @@ class CKEditorComponent extends Component {
   initialize(editor) {
     this.editor = editor;
 
-    this.addContentClass(editor, this.contentClass);
+    this.addContentClass(editor, this.contentClass, this.args.replaceContentClass);
 
     if (this.args.value) {
       editor.setData(this.args.value);
@@ -73,7 +73,7 @@ class CKEditorComponent extends Component {
     this.callback(this.args.onReady, editor);
   }
 
-  addContentClass(editor, contentClass) {
+  addContentClass(editor, contentClass, replace = false) {
     let view = editor.ui.view.editable;
     let editingView = view._editingView;
 
@@ -81,6 +81,10 @@ class CKEditorComponent extends Component {
       const viewRoot = editingView.document.getRoot(view.name);
 
       writer.addClass(contentClass, viewRoot);
+console.log(replace);
+      if (replace) {
+        writer.removeClass('ck-content', viewRoot);
+      }
     });
   }
 

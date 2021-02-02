@@ -42,6 +42,18 @@ export default class ApplicationController extends Controller {
           language: 'es',
         },
       },
+      {
+        name: 'Postedin Classic Editor: es, ck-content removed',
+        editor: ClassicEditor,
+        value: '',
+        options: {
+          language: 'es',
+        },
+        replaceContentClass: true,
+        onReady(editor) {
+          injectExternalLinkPaste(editor);
+        },
+      },
     ];
   }
 
