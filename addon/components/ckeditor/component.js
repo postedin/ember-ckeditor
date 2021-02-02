@@ -81,7 +81,7 @@ class CKEditorComponent extends Component {
       const viewRoot = editingView.document.getRoot(view.name);
 
       writer.addClass(contentClass, viewRoot);
-console.log(replace);
+
       if (replace) {
         writer.removeClass('ck-content', viewRoot);
       }
