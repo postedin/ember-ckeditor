@@ -14,7 +14,7 @@ module.exports = {
   },
 
   treeForVendor() {
-    const content = `Ember.libraries.register('Ember CKEditor', '${version}');`;
+    const content = `import Ember from 'ember'; Ember.libraries.register('Ember CKEditor', '${version}');`;
     const registerVersionTree = writeFile('ember-ckeditor/register-version.js', content);
 
     return mergeTrees([registerVersionTree]);
