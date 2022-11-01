@@ -10,7 +10,7 @@ module.exports = {
   included() {
     this._super.included.apply(this, arguments);
 
-    this.import('vendor/ember-ckeditor/register-version.js');
+    // this.import('vendor/ember-ckeditor/register-version.js');
   },
 
   treeForVendor() {
