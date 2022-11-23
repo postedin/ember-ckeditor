@@ -1,11 +1,12 @@
-# CKEditor 5 component for Ember.js 
+# CKEditor 5 component for Ember.js
+
 @postedin/ember-ckeditor
 
 **Un**official [CKEditor 5](https://ckeditor.com/ckeditor-5/) rich text editor component for Ember.js.
 
 ## Why we made it
 
-[Postedin](https://www.postedin.com) is a content creation platform. A good rich text editor is at the core of our product. Our platform uses [Ember.js](https://emberjs.com) so we naturally need a good integration with CKEditor 5 which we consider to be the best editor for the browser by a long shot. 
+[Postedin](https://www.postedin.com) is a content creation platform. A good rich text editor is at the core of our product. Our platform uses [Ember.js](https://emberjs.com) so we naturally need a good integration with CKEditor 5 which we consider to be the best editor for the browser by a long shot.
 
 ## What is next
 
@@ -24,17 +25,15 @@
 
 ## Compatibility
 
-* Ember.js v3.24 or above
-* Ember CLI v3.24 or above
-* Node.js v12 or above
-
+- Ember.js v3.24 or above
+- Ember CLI v3.24 or above
+- Node.js v12 or above
 
 ## Installation
 
 ```
 ember install @postedin/ember-ckeditor
 ```
-
 
 ## Usage
 
@@ -45,35 +44,41 @@ You need to have a build to use with this component. We use a combined build, so
 You will need to import the build and use it in the component.
 
 For example, make an `Editor` component. We added a basic option and it will update the value.
+
 ```js
 // components/editor.js
-import Component from '@glimmer/component';
-import { action } from '@ember/object';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import Component from "@glimmer/component";
+import { action } from "@ember/object";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 export default class EditorComponent extends Component {
-  classicEditor = ClassicEditor;
-  value = '';
-  options = {
-    link: {
-      addTargetToExternalLinks: true,
-    }, 
-  };
+	classicEditor = ClassicEditor;
+	value = "";
+	options = {
+		link: {
+			addTargetToExternalLinks: true,
+		},
+	};
 
-  @action
-  handleInput(value) {
-    this.value = value;
+	@action
+	handleInput(value) {
+		this.value = value;
 
-    if (this.args.onChanged) {
-      this.args.onChanged(value); // for consuming this component and getting the updated value
-    } 
-  }
+		if (this.args.onChanged) {
+			this.args.onChanged(value); // for consuming this component and getting the updated value
+		}
+	}
 }
 ```
 
 ```html
 <!-- components/editor.hbs -->
-<CKEditor @editor={{this.classicEditor}} @value={{this.value}} @options={{this.options}} @onInput={{this.handleInput}} />
+<CKEditor
+	@editor="{{this.classicEditor}}"
+	@value="{{this.value}}"
+	@options="{{this.options}}"
+	@onInput="{{this.handleInput}}"
+/>
 ```
 
 TODO: explain getting languages working

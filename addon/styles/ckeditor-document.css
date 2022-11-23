@@ -2,43 +2,43 @@
 /* It doesn't account for the inner content styles, that is default for your website. */
 
 :root {
-  --ck-doc-background: #eee;
-  --ck-doc-editable-padding: 3rem 6rem;
-  --ck-doc-editable-height: 70vh;
-  --ck-doc-editable-max-height: 700px;
-  --ck-doc-editable-content-color: #fff;
-  --ck-doc-editable-content-min-height: 29.7cm;
-  --ck-doc-editable-content-border: 1px #d3d3d3 solid;
-  --ck-doc-editable-content-box-shadow: 0 0 5px rgba(0,0,0,.1);
-  --ck-doc-editable-content-width: 21cm;
-  --ck-doc-editable-content-padding: 2cm;
+	--ck-doc-background: #eee;
+	--ck-doc-editable-padding: 3rem 6rem;
+	--ck-doc-editable-height: 70vh;
+	--ck-doc-editable-max-height: 700px;
+	--ck-doc-editable-content-color: #fff;
+	--ck-doc-editable-content-min-height: 29.7cm;
+	--ck-doc-editable-content-border: 1px #d3d3d3 solid;
+	--ck-doc-editable-content-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	--ck-doc-editable-content-width: 21cm;
+	--ck-doc-editable-content-padding: 2cm;
 }
 
 .ckeditor-document {
-  background-color: var(--ck-doc-background);
-  border: 1px solid var(--ck-color-toolbar-border);
+	background-color: var(--ck-doc-background);
+	border: 1px solid var(--ck-color-toolbar-border);
 }
 
 .ckeditor-document-toolbar .ck.ck-toolbar {
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
 }
 
 .ckeditor-document-editable {
-  padding: var(--ck-doc-editable-padding);
-  height: var(--ck-doc-editable-height);
-  max-height: var(--ck-doc-editable-max-height);
-  overflow-y: auto;
+	padding: var(--ck-doc-editable-padding);
+	height: var(--ck-doc-editable-height);
+	max-height: var(--ck-doc-editable-max-height);
+	overflow-y: auto;
 }
 
 .ckeditor-document-editable .ck.ck-content {
-  border: var(--ck-doc-editable-content-border);
-  box-shadow: var(--ck-doc-editable-content-box-shadow);
-  background-color: var(--ck-doc-editable-content-color);
-  min-height: var(--ck-doc-editable-content-min-height);
-  width: var(--ck-doc-editable-content-width);
-  max-width: 100%;
-  margin: 0 auto;
-  padding: var(--ck-doc-editable-content-padding);
+	border: var(--ck-doc-editable-content-border);
+	box-shadow: var(--ck-doc-editable-content-box-shadow);
+	background-color: var(--ck-doc-editable-content-color);
+	min-height: var(--ck-doc-editable-content-min-height);
+	width: var(--ck-doc-editable-content-width);
+	max-width: 100%;
+	margin: 0 auto;
+	padding: var(--ck-doc-editable-content-padding);
 }
