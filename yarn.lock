@@ -1319,10 +1319,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@postedin/ckeditor5-build-combined@^1.0.0":
-  version "1.12.1"
-  resolved "https://registry.yarnpkg.com/@postedin/ckeditor5-build-combined/-/ckeditor5-build-combined-1.12.1.tgz#3c6feedd11f2442950d268eb37cd2ca9ea007d92"
-  integrity sha512-vazOlIEVCuKceQwVHaAso6d+Y6IyFWqX3T8G+2/sJAJj5QiEjPC6uKj9f1omxvK6vrVlqBtpMcLDVdNpaaO4fQ==
+"@postedin/ckeditor5-build-combined@^2.0.0":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@postedin/ckeditor5-build-combined/-/ckeditor5-build-combined-2.0.1.tgz#56af89bda72eacbef2bfc903a1538b8e57e47734"
+  integrity sha512-6N29b3Y690a1GDp5+PLguikT1xJitGGNQJU6sJb5uW7dlHKTwlSWJYv5bPlMt/wS5sL+tzN1Fleu1ncumKOlEw==
 
 "@simple-dom/interface@^1.4.0":
   version "1.4.0"

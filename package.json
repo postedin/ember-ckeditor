@@ -57,7 +57,7 @@
     "@embroider/test-setup": "^0.48.1",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
-    "@postedin/ckeditor5-build-combined": "^1.0.0",
+    "@postedin/ckeditor5-build-combined": "^2.0.0",
     "@tailwindcss/typography": "^0.5.8",
     "autoprefixer": "^10.4.13",
     "babel-eslint": "^10.1.0",
