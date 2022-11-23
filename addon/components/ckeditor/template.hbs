@@ -1,10 +1,10 @@
-<div class="{{if @editor.document 'ckeditor-document'}}" ...attributes>
+<div class='{{if @editor.document "ckeditor-document"}}' ...attributes>
 	<div
-		class="{{if @editor.document 'ckeditor-document-toolbar'}}"
+		class='{{if @editor.document "ckeditor-document-toolbar"}}'
 		{{did-insert this.setupToolbar}}
 	>
 	</div>
-	<div class="{{if @editor.document 'ckeditor-document-editable'}}">
+	<div class='{{if @editor.document "ckeditor-document-editable"}}'>
 		<div
 			{{did-insert this.createEditor}}
 			{{did-update this.watch @disabled}}

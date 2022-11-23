@@ -1,4 +1,4 @@
-const EmberAddon = require("ember-cli/lib/broccoli/ember-addon");
+const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function (defaults) {
 	let app = new EmberAddon(defaults, {
@@ -6,11 +6,11 @@ module.exports = function (defaults) {
 			compile: {
 				cacheInclude: [/.*\.(css|hbs)$/, /.tailwind\/config\.js$/],
 				plugins: [
-					require("autoprefixer"),
+					require('autoprefixer'),
 					{
-						module: require("tailwindcss"),
+						module: require('tailwindcss'),
 						options: {
-							config: "tailwind.config.js",
+							config: 'tailwind.config.js',
 						},
 					},
 				],
@@ -26,17 +26,17 @@ module.exports = function (defaults) {
   */
 
 	app.import(
-		"node_modules/@postedin/ckeditor5-build-combined/build/translations/es.js"
+		'node_modules/@postedin/ckeditor5-build-combined/build/translations/es.js'
 	);
 	app.import(
-		"node_modules/@postedin/ckeditor5-build-combined/build/ckeditor-lark.css"
+		'node_modules/@postedin/ckeditor5-build-combined/build/ckeditor-lark.css'
 	);
 
-	const { maybeEmbroider } = require("@embroider/test-setup");
+	const { maybeEmbroider } = require('@embroider/test-setup');
 	return maybeEmbroider(app, {
 		skipBabel: [
 			{
-				package: "qunit",
+				package: 'qunit',
 			},
 		],
 	});

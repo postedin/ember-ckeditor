@@ -1,1 +1,1 @@
-export { default } from "@postedin/ember-ckeditor/components/ckeditor/component";
+export { default } from '@postedin/ember-ckeditor/components/ckeditor/component';

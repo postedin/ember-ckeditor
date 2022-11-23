@@ -47,13 +47,13 @@ For example, make an `Editor` component. We added a basic option and it will upd
 
 ```js
 // components/editor.js
-import Component from "@glimmer/component";
-import { action } from "@ember/object";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 export default class EditorComponent extends Component {
 	classicEditor = ClassicEditor;
-	value = "";
+	value = '';
 	options = {
 		link: {
 			addTargetToExternalLinks: true,

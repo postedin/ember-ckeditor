@@ -1,6 +1,6 @@
-import Component from "@glimmer/component";
-import { action } from "@ember/object";
-import { later, cancel } from "@ember/runloop";
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
+import { later, cancel } from '@ember/runloop';
 
 const DEBOUNCE_MS = 300;
 
@@ -8,7 +8,7 @@ class CKEditorComponent extends Component {
 	editor = null;
 
 	get contentClass() {
-		return this.args.contentClass || "content-scope";
+		return this.args.contentClass || 'content-scope';
 	}
 
 	@action
@@ -87,13 +87,13 @@ class CKEditorComponent extends Component {
 			writer.addClass(contentClass, viewRoot);
 
 			if (replace) {
-				writer.removeClass("ck-content", viewRoot);
+				writer.removeClass('ck-content', viewRoot);
 			}
 		});
 	}
 
 	listenToChanges(editor) {
-		editor.model.document.on("change:data", () => {
+		editor.model.document.on('change:data', () => {
 			let debounceMs = parseInt(this.args.debounce);
 
 			if (isNaN(debounceMs)) {
@@ -118,32 +118,32 @@ class CKEditorComponent extends Component {
 
 	fixPaste(html) {
 		let randomCodes = [
-			"&lt;!--td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}--&gt;",
-			"&lt;!--br {mso-data-placement:same-cell;}--&gt;",
+			'&lt;!--td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}--&gt;',
+			'&lt;!--br {mso-data-placement:same-cell;}--&gt;',
 		];
 
 		for (let code of randomCodes) {
-			html = html.replace(`<p>${code}</p>`, "").replace(code, "");
+			html = html.replace(`<p>${code}</p>`, '').replace(code, '');
 		}
 
 		return html;
 	}
 
 	listenToFocus(editor) {
-		editor.editing.view.document.on("focus", () => this.editorFocus());
-		editor.editing.view.document.on("blur", () => this.editorBlur());
+		editor.editing.view.document.on('focus', () => this.editorFocus());
+		editor.editing.view.document.on('blur', () => this.editorBlur());
 	}
 
 	listenToUpload(editor) {
-		if (!editor.plugins.has("FileRepository")) {
+		if (!editor.plugins.has('FileRepository')) {
 			return;
 		}
 
-		let fileRepository = editor.plugins.get("FileRepository");
+		let fileRepository = editor.plugins.get('FileRepository');
 
 		if (fileRepository) {
-			fileRepository.on("loaderCreated", (event, loader) => {
-				loader.on("change:uploadResponse", () => {
+			fileRepository.on('loaderCreated', (event, loader) => {
+				loader.on('change:uploadResponse', () => {
 					if (loader.uploadResponse) {
 						this.editorUpload(loader.uploadResponse);
 					}
