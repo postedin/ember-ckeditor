@@ -53,13 +53,15 @@
     "@glimmer/component": "^1.0.1",
     "@glimmer/tracking": "^1.0.0",
     "@postedin/ckeditor5-build-combined": "^1.0.0",
+    "@tailwindcss/typography": "^0.5.8",
+    "autoprefixer": "^10.4.13",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-cli": "~3.20.0",
     "ember-cli-dependency-checker": "^3.2.0",
     "ember-cli-inject-live-reload": "^2.0.2",
     "ember-cli-mirage": "^1.1.4",
-    "ember-cli-postcss": "^6.0.0",
+    "ember-cli-postcss": "^8.2.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-uglify": "^3.0.0",
     "ember-disable-prototype-extensions": "^1.1.3",
@@ -82,9 +84,9 @@
     "loader.js": "^4.7.0",
     "morgan": "^1.3.2",
     "npm-run-all": "^4.1.5",
-    "postcss-import": "^12.0.1",
+    "postcss-import": "^15.0.0",
     "qunit-dom": "^1.2.0",
-    "tailwindcss": "^1.1.4"
+    "tailwindcss": "^3.2.4"
   },
   "engines": {
     "node": "10.* || >= 12"

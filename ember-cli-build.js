@@ -4,8 +4,15 @@ module.exports = function (defaults) {
   const app = new EmberAddon(defaults, {
     postcssOptions: {
       compile: {
+        cacheInclude: [/.*\.(css|hbs)$/, /.tailwind\/config\.js$/],
         plugins: [
-          require('tailwindcss'),
+          require('autoprefixer'),
+          {
+            module: require('tailwindcss'),
+            options: {
+              config: 'tailwind.config.js'
+            },
+          },
         ],
       },
     },
