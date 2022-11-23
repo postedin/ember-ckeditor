@@ -1,7 +1,7 @@
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function (defaults) {
-  const app = new EmberAddon(defaults, {
+  let app = new EmberAddon(defaults, {
     postcssOptions: {
       compile: {
         cacheInclude: [/.*\.(css|hbs)$/, /.tailwind\/config\.js$/],
@@ -28,5 +28,12 @@ module.exports = function (defaults) {
   app.import('node_modules/@postedin/ckeditor5-build-combined/build/translations/es.js');
   app.import('node_modules/@postedin/ckeditor5-build-combined/build/ckeditor-lark.css');
 
-  return app.toTree();
+  const { maybeEmbroider } = require('@embroider/test-setup');
+  return maybeEmbroider(app, {
+    skipBabel: [
+      {
+        package: 'qunit',
+      },
+    ],
+  });
 };

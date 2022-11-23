@@ -6,17 +6,4 @@ const version = require('./package.json').version;
 
 module.exports = {
   name: require('./package').name,
-
-  included() {
-    this._super.included.apply(this, arguments);
-
-    // this.import('vendor/ember-ckeditor/register-version.js');
-  },
-
-  treeForVendor() {
-    const content = `import Ember from 'ember'; Ember.libraries.register('Ember CKEditor', '${version}');`;
-    const registerVersionTree = writeFile('ember-ckeditor/register-version.js', content);
-
-    return mergeTrees([registerVersionTree]);
-  },
 };
