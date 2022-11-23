@@ -1,17 +1,52 @@
+'use strict';
+
 module.exports = {
-  extends: 'airbnb-base',
+  root: true,
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+    ecmaFeatures: {
+      legacyDecorators: true,
+    },
+  },
+  plugins: ['ember'],
+  extends: [
+    'eslint:recommended',
+    'plugin:ember/recommended',
+    'plugin:prettier/recommended',
+  ],
   env: {
-    es6: true,
-    mocha: true,
+    browser: true,
   },
-  globals: {
-    expect: true,
-    sinon: true,
-  },
-  rules: {
-    'import/no-extraneous-dependencies': 0,
-    'no-underscore-dangle': 0,
-    'max-len': 0,
-    'no-shadow': 0,
-  },
+  rules: {},
+  overrides: [
+    // node files
+    {
+      files: [
+        './.eslintrc.js',
+        './.prettierrc.js',
+        './.template-lintrc.js',
+        './ember-cli-build.js',
+        './testem.js',
+        './blueprints/*/index.js',
+        './config/**/*.js',
+        './tests/dummy/config/**/*.js',
+      ],
+      parserOptions: {
+        sourceType: 'script',
+      },
+      env: {
+        browser: false,
+        node: true,
+      },
+      plugins: ['node'],
+      extends: ['plugin:node/recommended'],
+    },
+    {
+      // test files
+      files: ['tests/**/*-test.{js,ts}'],
+      extends: ['plugin:qunit/recommended'],
+    },
+  ],
 };

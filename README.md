@@ -1,5 +1,5 @@
-CKEditor 5 component for Ember.js
-==============================================================================
+# CKEditor 5 component for Ember.js 
+@postedin/ember-ckeditor
 
 **Un**official [CKEditor 5](https://ckeditor.com/ckeditor-5/) rich text editor component for Ember.js.
 
@@ -22,23 +22,21 @@ CKEditor 5 component for Ember.js
 - autocomplete plugin (similar to gmail suggestions when writing an email)
 - sources plugin (add a source that we can list at the bottom of the document)
 
-Compatibility
-------------------------------------------------------------------------------
-(maybe)
+## Compatibility
 
 * Ember.js v3.24 or above
 * Ember CLI v3.24 or above
 * Node.js v12 or above
 
-Installation
-------------------------------------------------------------------------------
+
+## Installation
 
 ```
 ember install @postedin/ember-ckeditor
 ```
 
-Usage
-------------------------------------------------------------------------------
+
+## Usage
 
 TODO: proper detailed usage
 
@@ -80,14 +78,12 @@ export default class EditorComponent extends Component {
 
 TODO: explain getting languages working
 
-Contributing
-------------------------------------------------------------------------------
+## Contributing
 
 TODO: more details
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).
