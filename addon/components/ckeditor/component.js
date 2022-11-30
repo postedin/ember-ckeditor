@@ -14,7 +14,7 @@ class CKEditorComponent extends Component {
 	@action
 	watch() {
 		if (this.editor) {
-			this.editor.isReadOnly = this.args.disabled;
+			this.setReadOnly(this.editor, this.args.disabled);
 		}
 	}
 
@@ -62,7 +62,7 @@ class CKEditorComponent extends Component {
 		}
 
 		if (this.args.disabled) {
-			editor.isReadOnly = true;
+			this.setReadOnly(editor, true);
 		}
 
 		// right away we send the new value back because ckeditor will strip stuff not supported
@@ -176,6 +176,14 @@ class CKEditorComponent extends Component {
 
 	editorUpload(response) {
 		this.callback(this.args.onUpload, response);
+	}
+
+	setReadOnly(editor, readOnly, lockId = 'default') {
+		if (typeof editor.enableReadOnlyMode === 'function') {
+			editor[readOnly ? 'enableReadOnlyMode' : 'disableReadOnlyMode'](lockId);
+		} else {
+			editor.isReadOnly = readOnly;
+		}
 	}
 }
 
